@@ -25,6 +25,10 @@ end
 gem 'jquery-rails'
 
 gem 'therubyracer'
+gem 'delayed_job_active_record'
+# using the latest daemons gem will crash delayed_job in daemonized mode
+gem "daemons","1.0.10"
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -40,3 +44,5 @@ gem 'therubyracer'
 
 # To use debugger
 # gem 'ruby-debug'
+
+
