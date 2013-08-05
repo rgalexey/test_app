@@ -9,8 +9,8 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-require 'dotenv'
-Dotenv.load ".env.#{ENV['RAILS_ENV'] || ENV['RACK_ENV'] || 'development'}", '.env'
+#require 'dotenv'
+#Dotenv.load ".env.#{ENV['RAILS_ENV'] || ENV['RACK_ENV'] || 'development'}", '.env'
 
 module TestApp
   class Application < Rails::Application
