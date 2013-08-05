@@ -10,13 +10,16 @@ end
 
 Chef::Log.info(node['platform'])
 
-      case node['ec2']['instance_type']
-      when 'm1.small' then worker_count = 2
-      when 'c1.medium' then worker_count = 4
-      when 'c1.xlarge' then worker_count = 8
-      else
-        worker_count = 2
-      end
+#      case node['ec2']['instance_type']
+#      when 'm1.small' then worker_count = 2
+#      when 'c1.medium' then worker_count = 4
+#      when 'c1.xlarge' then worker_count = 8
+#      else
+#        worker_count = 2
+#      end
 
-Chef::Log.info(node['ec2']['instance_type'])
-Chef::Log.info(worker_count)
+
+if node.attribute?("ec2")
+	Chef::Log.info(" We have EC2 atribute")
+ end
+
