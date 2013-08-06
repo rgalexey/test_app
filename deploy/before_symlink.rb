@@ -9,7 +9,7 @@ when "redhat", "centos", "fedora"
 end
 
 Chef::Log.info(node['platform'])
-
+Chef::Log.info(node[:opsworks][:instance][:instance_type])
 #      case node['ec2']['instance_type']
 #      when 'm1.small' then worker_count = 2
 #      when 'c1.medium' then worker_count = 4
