@@ -1,13 +1,6 @@
-!/usr/bin/env ruby
-
-require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
-require 'delayed/command'
-Delayed::Command.new(ARGV).daemonize
-[root@uat-rgx1-delayed-proc current]# cat script/api_service_stop 
 RAILS_ENV=production ./delayed_job stop
 sleep 10
 ps -ef|grep delay
 RAILS_ENV=production ./delayed_job stop
 sleep 10
 ps -ef|grep delay
-
