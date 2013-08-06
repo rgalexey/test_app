@@ -1,5 +1,9 @@
 class GreetingsController < ApplicationController
   def hello
-	@message = "Hello, how are you today?"
-  end
-end
+           def query
+                           ENV.map {|k,v|  { "name" => k, "value" => v } }
+                                   end
+
+                                           @message = query
+                                              end
+                                              end
