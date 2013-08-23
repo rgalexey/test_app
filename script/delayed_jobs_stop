@@ -1,6 +1,6 @@
 RAILS_ENV=$RAILS_ENV $(dirname `readlink -f $0`)/delayed_job stop
 sleep 10
-ps -ef | grep delayed_job | grep -v grep
+ps -ef | grep delayed_job | grep -v -P "grep|delayed_jobs_"
 RAILS_ENV=$RAILS_ENV $(dirname `readlink -f $0`)/delayed_job stop
 sleep 10
-ps -ef | grep delayed_job | grep -v grep
+ps -ef | grep delayed_job | grep -v -P "grep|delayed_jobs_"
