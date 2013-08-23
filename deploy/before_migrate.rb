@@ -1,7 +1,8 @@
 Chef::Log.info("Running deploy/before_migrate.rb...")
 
 
-Chef::Log.info(`bundle exec rails generate delayed_job:active_record`)
+Chef::Log.info(`bundle exec rails generate delayed_job:active_record; bundle exec rake db:migrate`)
+
 
 Chef::Log.info(node[:opsworks][:instance][:layers].to_s)
 
