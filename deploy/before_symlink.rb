@@ -10,6 +10,14 @@ end
 
 Chef::Log.info(node['platform'])
 Chef::Log.info(node[:opsworks][:instance][:instance_type])
+
+bash "echo something" do
+   code <<-EOF
+     echo 'I am a chef!'
+   EOF
+end
+
+
 #      case node['ec2']['instance_type']
 #      when 'm1.small' then worker_count = 2
 #      when 'c1.medium' then worker_count = 4
@@ -19,7 +27,4 @@ Chef::Log.info(node[:opsworks][:instance][:instance_type])
 #      end
 
 
-if node.attribute?("ec2")
-	Chef::Log.info(" We have EC2 atribute")
- end
 
