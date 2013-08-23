@@ -11,7 +11,8 @@ Chef::Log.info(node['platform'])
 Chef::Log.info(node[:opsworks][:instance][:instance_type])
 Chef::Log.info(node[:opsworks][:instance][:hostname])
 
-Chef::Log.info(node[:deploy][application][:name])
+
+
 
 #Chef::Log.info("[ -e #{node[:deploy][:rg_api_dly_proc][:deploy_to]}/current/ ] && ( echo 'We are on delayed job box. Stopping delayed jobs'; cd #{node[:deploy][:rg_api_dly_proc][:deploy_to]}/current/ && RAILS_ENV=production script/delayed_jobs_stop )")
 #Chef::Log.info(`[ -e #{node[:deploy][:rg_api_dly_proc][:deploy_to]}/current/ ] && ( echo 'We are on delayed job box. Stopping delayed jobs'; cd #{node[:deploy][:rg_api_dly_proc][:deploy_to]}/current/ && RAILS_ENV=production script/delayed_jobs_stop )`)
