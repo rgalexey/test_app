@@ -1,0 +1,14 @@
+# Keep this at 2 jobs until we start paying for a dedicated db
+# this is required because the free tier of herok pg allows max 20 connections and we have 4 connections in thread pool for each process.
+# we will leave 10 connections spare for the website and direct connections
+#RAILS_ENV=production ./delayed_job -n $1 start >> ~/video_service/current/log/delayed_job.log
+echo "Don't forget to specify number of processes to start"
+echo "You passed this value for number of services: $1"
+
+threads=$1
+
+[ "$threads" == "" ] && threads=`grep processor /proc/cpuinfo | wc -l`
+
+RAILS_ENV=$RAILS_ENV $(dirname `readlink -f $0`)/delayed_job start -n $threads
+sleep 10
+ps -ef | grep delayed_job | grep -v grep
