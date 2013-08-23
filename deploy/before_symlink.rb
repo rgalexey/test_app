@@ -1,5 +1,6 @@
 Chef::Log.info("Running deploy/before_symlink.rb...")
-run "cd #{release_path} && RAILS_ENV=production bundle exec rake assets:precompile"
+Chef::Log.info("cd #{release_path} && RAILS_ENV=production bundle exec rake assets:precompile")
+Chef::Log.info(`cd #{release_path} && RAILS_ENV=production bundle exec rake assets:precompile`)
 
 case node['platform']
 when "debian", "ubuntu"
@@ -11,12 +12,7 @@ end
 Chef::Log.info(node['platform'])
 Chef::Log.info(node[:opsworks][:instance][:instance_type])
 
-bash "echo something" do
-   code <<-EOF
-     echo 'I am a chef!'
-   EOF
-end
-
+Chef::Log.info(`[ -e #{node[:deploy][:rg_api_dly_proc][:deploy_to]}/current/ ] && ( echo 'We are on delayed job box. Stopping delayed jobs'; cd #{node[:deploy][:rg_api_dly_proc][:deploy_to]}/current/ && RAILS_ENV=production script/delayed_jobs_stop )"`)
 
 #      case node['ec2']['instance_type']
 #      when 'm1.small' then worker_count = 2
