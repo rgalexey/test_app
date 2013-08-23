@@ -10,4 +10,7 @@ Chef::Log.info(node[:opsworks][:instance][:layers].to_s)
 
 
 #run "cd #{release_path} && RAILS_ENV=production bundle exec rake assets:precompile"
+#
+#
+#
 
