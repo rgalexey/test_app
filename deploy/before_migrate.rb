@@ -1,6 +1,3 @@
-# Bind release_path to local variable
-#cache_release_path = release_path
-#opsworks_app_environment do
-#  app_name 'test_rails_app'
-#  release_path cache_release_path
-#end
+Chef::Log.info("Running deploy/before_migrate.rb...")
+run "cd #{release_path} && RAILS_ENV=production bundle exec rake assets:precompile"
+
