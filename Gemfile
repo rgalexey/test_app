@@ -33,6 +33,7 @@ gem 'figaro'
 
 gem "new1"
 gem "new2"
+gem "New2"
 
 
 # To use ActiveModel has_secure_password
