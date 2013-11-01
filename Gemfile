@@ -31,6 +31,8 @@ gem "daemons","1.0.10"
 gem 'dotenv'
 gem 'figaro'
 
+gem "new1"
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
