@@ -29,7 +29,7 @@ gem 'delayed_job_active_record'
 # using the latest daemons gem will crash delayed_job in daemonized mode
 gem "daemons","1.0.10"
 gem 'dotenv'
-#gem 'figaro'
+gem 'figaro'
 
 
 # To use ActiveModel has_secure_password
